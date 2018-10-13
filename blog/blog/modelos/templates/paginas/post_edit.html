@@ -1,0 +1,34 @@
+{% extends 'core/base.html'%}
+{% block titulo %}Inicio{% endblock %} 
+
+{% block bagrout %} {% load static %} {% static 'core/images/about.jpg' %} 
+{% endblock %}
+{% block informacion %}
+<h1 id="colorlib-logo"><a href="{% url 'inicio' %}">Máximo Gómez</a></h1>
+<span class="position">Correo:ardany@mesoamericana.edu.gt</span>
+{% endblock %} 
+
+
+{% block inicio %} 
+<h1>Publilcacion! <br>Aqui Puedes Editar </h1>
+<h2>Solo una publicacion </h2>
+{% endblock %} 
+
+
+{% block inicioo %} 
+<h1>Sigue Asta abajo <br>Editar Publicacion</h1>
+<h2>Editar Publicacion</h2>				
+{% endblock %} 
+
+{% block p %} 
+<form method="POST" class="post-form">{% csrf_token %}
+        
+        {{form.as_p}}
+        <button type="submit" class="save btn btn-default">Actualizar Pagina</button>
+       </form>
+   
+{% endblock %} 
+
+
+
+

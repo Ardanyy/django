@@ -1,0 +1,11 @@
+ {% extends 'core/plantilla.html' %}
+ {% block titulo %} Inicio {% endblock %}
+    {% block inicio %} 
+    <h2>Bienveindo A Mi Blog</h2>
+    </header>
+    <p>Aqui Podras Encontrar Informacion Sobre mi blog y algunas publicaciones</p>
+    <ul class="actions">
+        <li><a href="{% url 'publicaciones' %}" class="button">Leer Publicacions</a></li>
+    </ul>
+    {% endblock %}
+

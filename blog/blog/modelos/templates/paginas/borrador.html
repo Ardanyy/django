@@ -1,0 +1,43 @@
+{% extends 'core/base.html'%}
+{% block titulo %}Inicio{% endblock %} 
+
+{% block bagrout %} {% load static %} {% static 'core/images/about.jpg' %} 
+{% endblock %}
+{% block informacion %}
+<h1 id="colorlib-logo"><a href="{% url 'inicio' %}">Máximo Gómez</a></h1>
+<span class="position">Correo:ardany@mesoamericana.edu.gt</span>
+{% endblock %} 
+
+
+{% block inicio %} 
+<h1>Publicaiones! <br>Aqui Puedes ver</h1>
+<h2>Todas mis Borradores </h2>
+{% endblock %} 
+
+
+{% block inicioo %} 
+<h1>Sigue Asta abajo <br>estan mis publicaciones</h1>
+<h2>mis publicaciones</h2>				
+{% endblock %} 
+
+{% block post %} 
+{% for a in post %}
+<div class="timeline-label">
+        
+        <h2><a href="/publicaciones/{{a.id}}">Titulo:{{a.titulo}}</a><p>Subtitulo:{{a.sub}}</p> <span>Creado:{{a.published_date}}</span></h2>
+        <p>{{a.description}}</p>
+        <p></p>
+     </div>
+     {% if post.published_date %}
+     <div class="date">
+        {{a.published_date}}
+     </div>
+     {% else %}
+        <a class="btn btn-default" href="/publicar/{{a.id}}">Publicar</a>
+        <a class="btn btn-default" href="/eliminar/{{a.id}}">Eliminar</a>
+        
+     {% endif %}
+     {% endfor %}
+{% endblock %} 
+
+

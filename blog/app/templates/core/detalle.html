@@ -1,0 +1,19 @@
+{% extends 'core/plantilla.html' %}
+
+{% block titulo %} publicaciones {% endblock %}
+
+{% block publicaciones %} 
+
+<div class="row">
+        <article class="col-6 col-12-xsmall work-item">
+            <h1>{{bd.created_date}}</h1>
+            <h3>{{bd.title}}</h3>
+            <p>{{bd.text}}</p>
+            <ul class="actions">
+                    <li><a href="{% url 'publicaciones' %}" class="button">Leer</a></li>
+                </ul>
+        </article>
+  
+{% endblock %}
+
+

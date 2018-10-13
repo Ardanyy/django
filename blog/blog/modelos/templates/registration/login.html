@@ -1,0 +1,14 @@
+{% extends 'core/base.html'%}
+{% block inicio %} 
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<h1>Ingrese Al Sistema Para Continuar Abajo esta el login</h1>
+{% endblock %}
+{% block post %} 
+<form method="POST" class="post-form">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="save btn btn-default">Guardar</button>
+       </form>
+    {% endblock %}
